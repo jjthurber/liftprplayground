@@ -22,12 +22,14 @@ function tellVersion() {
 }
 
 function run() {
+
   temp="$(env)"
   temp2="$(echo $temp | tr -d '\n')"
+  temp3="$(echo $temp2 | jq -Rsa .)"
 
   echo "[{"
   echo "\"type\" : \"baz\","
-  echo "\"message\" : \"$temp2\","
+  echo "\"message\" : $temp3,"
   echo "\"file\" : \"foo.bar\","
   echo "\"line\" : 1"
   echo "}]"
