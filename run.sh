@@ -2,3 +2,5 @@
 
 echo "$FROM_ENV"
 
+foo = bar
+
